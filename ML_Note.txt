@@ -1,0 +1,43 @@
+		1.Introduction Of Machine Learning
+		
+	- first machine learning application in 1990 is a spam filter
+	- Machine learning is the field of study that gives computers the ability to
+learn without being explicitly programmed.	—Arthur Samuel, 1959
+	- A computer program is said to learn from experience E with respect to
+some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.	—Tom Mitchell, 1997
+
+		2. Type of machine learning
+		
+	- Supervise Learning : 	
+- We called target in regression problem and label for classification problem
+- for features they can be named Predictors oe attributes
+	
+	- Unsepervise learning :
+- dimensionality reduction => feature extraction. is Approach were we merge two correlated feature in one.
+	
+	- Semi-supervised learning : 
+		
+	- Self-supervised learning : 
+- transfer learning : Transferring knowledge from one task to another
+
+	- Reinforcement learning :	
+- best strategy => called a policy
+- offline learning
+
+
+	- Batch Versus Online Learning :
+
+- Batch learning : is to train the model in new and old dataset to generate a new model
+    - model rot or data drift
+- Online learning :
+    - learning incrementally
+    - out-of-core learning
+    - learning rate
+
+
+	- Instance-Based Versus Model-Based Learning
+
+- Instance-based learning :
+- Model-based learning and a typical machine learning workflow :
+    - model selection : choosing the type of model and fully specifying its architecture
+    - Training a model : running an algorithm to find the model parameters that will make it best fit the training data
