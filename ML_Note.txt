@@ -184,11 +184,33 @@ An Instance-based learning system (like k-Nearest Neighbors) relies on a similar
 	19. Tuning Hyperparameters Using the Test Set
  - If you tune hyperparameters based on the test set, you are effectively overfitting the test set. Your model will look like it performs great, but it has simply "memorized" the quirks of that specific test data, and it will likely perform poorly on truly unseen data.
 
+		=> Pipelines
 
+Think of a Machine Learning Pipeline as an assembly line in a factory. Instead of building a car, this assembly line builds predictions.
+Raw data enters at one end, goes through several specialized stations (components), and comes out as a finished product (a trained model or a live prediction) at the other.
 
+	- How a Pipeline Works
+In a typical pipeline, each "station" is responsible for one specific job:
+ - Data Ingestion: Pulling raw data from a database.
+ - Cleaning: Removing duplicates or fixing missing values.
+ - Transformation: Converting text into numbers or scaling values.
+ - Model Training: Feeding that clean data into an algorithm.
 
+	- The "Bucket Brigade" Approach (Asynchrony)
+The components don't usually talk to each other directly. Instead:
+ - Component A finishes its job and dumps the result into a data store (like a folder or a database).
+ - Component B checks that store, picks up the data, processes it, and dumps it into the next store.
+=> This "buffer" between steps is what makes pipelines so powerful.
 
-
+	- Why Use Pipelines?
+Benefit	    |	Why it Matters
+________________________________________________________________________________________________________________________________
+Simplicity  |	Each team can focus on just one "station" without needing to know how the whole factory works.
+_________________________________________________________________________________________________________________________________
+Robustness  |	If the "Cleaning" station breaks, the "Training" station can keep working for a while using the last batch of clean data available.
+__________________________________________________________________________________________________________________________________
+Modularity  |	You can swap out a single component (like upgrading your cleaning script) without rebuilding the entire system.
+__________________________________________________________________________________________________________________________________
 
 
 
