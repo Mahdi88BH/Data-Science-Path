@@ -41,9 +41,16 @@ An agent learns by interacting with an environment. It receives rewards for good
 How does the model handle new data once it is deployed?
 	- Batch Learning (Offline): 
 The system is incapable of learning incrementally. It must be trained using all available data (new + old).
+ - Full Data Training: The algorithm takes the entire dataset and builds a model. This typically takes a lot of time and computing resources (CPU, RAM, Disk I/O).
+ - Offline Phase: The training is done "offline." While the model is learning, it isn't processing live requests.
+ - Deployment: Once the model is trained, it is launched into production. It now runs without learning anything new; it just applies what it learned during the training phase. This is called is-learning.
+ - Updates: To update the model with new information (like new spam patterns or stock market shifts), you stop the system, retrain a new model on the updated "batch" of data, and redeploy.
            > Model Rot/Data Drift: Since the model is "static," its performance decays over time as the real-world data changes (e.g., a 2010 real estate model won't work in 2026).
 	- Online Learning: 
 The system learns incrementally by feeding it data instances individually or in small groups (mini-batches).
+ - Incremental Updates: The model is trained on a small piece of data, learns from it, and then discards that data (unless you want to keep it for backup).
+ - Live Learning: The system can learn "on the fly" while it is in production. It doesn't need to be stopped and retrained from scratch to incorporate new information.
+ - Computational Efficiency: Because it only processes a small amount of data at a time, it requires very little CPU power and RAM compared to retraining a massive batch model.
           > Learning Rate: A parameter that determines how quickly the model should "forget" old patterns to adopt new ones.
           > Out-of-core Learning: A huge advantage; it allows the system to train on datasets that are too large to fit into a computer’s main memory (RAM).
 
@@ -52,7 +59,7 @@ How does the machine actually make a prediction on a new piece of data?
 	- Instance-Based Learning: 
 The system learns the training examples by heart. To generalize to a new case, it uses a similarity measure to find the most similar learned examples (e.g., "This new email looks exactly like these 3 spam emails I saw earlier").
 	- Model-Based Learning: 
-The system builds a mathematical model (like a line or a curve) from the examples.
+ - it tries to find a pattern in the data and summarizes that pattern into a mathematical formula or "model." Once the model is built, you can throw away the specific training examples and just use the formula to make predictions.
 	  - Model Selection: Choosing the right architecture (e.g., a Linear Regression vs. a Neural Network).
 	  - Model Training: The process of running an algorithm to find the parameters (weights) that allow the model to best fit the training data.
 
@@ -98,5 +105,118 @@ Hyperparameters are settings you choose before training (like the learning rate)
 		4.2 Data Mismatch 
 	- Data Mismatch: When the validation/test data (e.g., high-res professional photos) is different from the training data (e.g., low-res web scraps).
 	  > No Free Lunch (NFL) Theorem: A mathematical proof stating that there is no "perfect" algorithm that works best for every problem. You must always test different models to find what works for your specific data.
+
+
+	1. Defining Machine Learning
+ - Machine Learning (ML) is the science of programming computers so they can learn from data. More formally, a computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.
+	
+	2. Four Applications Where ML Shines
+		> Complex problems for which existing solutions require a lot of fine-tuning or long lists of rules (e.g., spam filters).
+		> Fluctuating environments where the system needs to adapt to new data constantly.
+		> Getting insights from large amounts of data (Data Mining).
+		> Problems that are too complex for traditional approaches (e.g., speech recognition or computer vision).
+	
+	3. Labeled Training Set
+ - A labeled training set is a dataset that contains the desired solutions, called labels, for each training instance. For example, in a spam filter training set, each email is marked as "spam" or "ham."
+	
+	4. Two Most Common Supervised Tasks
+		> Regression: Predicting a target numeric value (e.g., the price of a car).
+		> Classification: Assigning instances to specific classes (e.g., classifying an image as a "dog" or a "cat").
+	
+	5. Four Common Unsupervised Tasks
+		> Clustering: Grouping similar instances together.
+		> Visualization and Dimensionality Reduction: Simplifying data without losing too much information.
+		> Anomaly Detection: Identifying unusual data points (e.g., credit card fraud).
+		> Association Rule Learning: Discovering interesting relations between variables (e.g., people who buy diapers also tend to buy beer).
+	
+	6. Robot Walking in Unknown Terrains
+ - You would use Reinforcement Learning. This involves an "agent" that learns by trial and error, receiving rewards for good actions and penalties for bad ones until it develops the best policy for movement.
+	
+	7. Segmenting Customers
+ - This is a Clustering problem (Unsupervised Learning). If you don't know the groups beforehand, you let the algorithm find natural patterns and similarities among your customers.
+
+	8. Spam Detection Framing
+ - It is a Supervised Learning problem because the algorithm is trained with many examples of emails along with their class (spam or not spam).
+
+	9. Online Learning System
+ - An online learning system learns incrementally by feeding it data instances sequentially, either individually or in small groups called mini-batches. This is ideal for systems that receive data as a continuous flow or have limited computing resources.
+
+	10. Out-of-Core Learning
+ - This refers to algorithms that can handle vast amounts of data that cannot fit into a computer's main memory (RAM). It chops the data into small chunks and uses online learning to process them.
+
+	11. Similarity-Based Algorithms
+An Instance-based learning system (like k-Nearest Neighbors) relies on a similarity measure. It learns the training examples by heart and generalizes to new cases by comparing them to the most similar learned instances.
+
+	12. Model Parameter vs. Hyperparameter
+ - Model Parameter: A configuration variable internal to the model whose value can be estimated from data (e.g., the weights $w$ and bias $b$ in linear regression).
+ - Hyperparameter: A configuration external to the model that is set by the practitioner before training (e.g., the learning rate or the number of clusters).
+
+	13. Model-Based Algorithms
+		> Search for: They search for the optimal values for the model parameters that allow the model to generalize well.
+		> Strategy: They typically minimize a cost function (which measures how bad the model is) or maximize a fitness function.
+		> Predictions: They make predictions by plugging new input values into the mathematical model using the optimized parameters.
+
+	14. Four Main Challenges in ML
+		1. Insufficient quantity of training data.
+		2. Non-representative training data (sampling bias).
+		3. Poor-quality data (errors, outliers, and noise).
+		4. Irrelevant features (garbage in, garbage out).
+
+	15. Overfitting and Solutions
+ - If a model is great on training data but poor on new data, it is overfitting.
+	Solutions:
+		> Simplify the model (e.g., pick a linear model instead of high-degree polynomial).
+		> Gather more training data.
+		> Reduce noise in the training data (fix errors).
+		> Regularization: Constrain the model to make it simpler.
+
+	16. Test Set
+ - The test set is a subset of data used after training to estimate the generalization error the model will make on new instances. You use it to see how the model performs in the "real world."
+
+	17. Validation Set
+ - A validation set is used to compare models and tune hyperparameters. It allows you to select the best model and settings without "leaking" information from the test set.
+
+	18. Train-Dev Set
+		- What it is: A subset of the training set held out after shuffling.
+		- When you need it: When there is a mismatch between the training data and the data used in the actual application (e.g., training on web images but deploying on low-res mobile photos).
+		- How to use it: If the model performs poorly on the train-dev set, it's overfitting the training set. If it performs well on train-dev but poorly on the validation set, there is a data mismatch.
+
+	19. Tuning Hyperparameters Using the Test Set
+ - If you tune hyperparameters based on the test set, you are effectively overfitting the test set. Your model will look like it performs great, but it has simply "memorized" the quirks of that specific test data, and it will likely perform poorly on truly unseen data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
