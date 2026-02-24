@@ -214,15 +214,55 @@ ________________________________________________________________________________
 
 
 
+		=> creating test set :
+
+	1. Data snooping bias 
+ - (often called p-hacking, data mining, or fishing) occurs when a researcher or analyst looks at the data first and then picks a statistical model or hypothesis that fits that specific data set.
+ - Essentially, it’s when you torture the data until it confesses to something that isn't actually there.
+   How It Happens : 
+In a world of "Big Data," if you run enough tests or look at enough variables, you are guaranteed to find a pattern eventually—even in completely random noise.
+- The Overfitting Trap: Building a model that is so perfectly tuned to the "quirks" of a specific historical dataset that it fails miserably when applied to new, real-world data.
+- Selective Reporting: Running 20 different versions of an experiment and only publishing the one that showed a significant result.
+- The "Texas Sharpshooter": Shooting a gun at a barn door and then drawing the bullseye around the cluster of bullet holes.
+
+ > Real-World Examples
+ 
+Field            |  Example of Bias
+______________________________________________________________________________________________________________________________________________________________________
+Finance          |  "Backtesting thousands of trading strategies until one shows 50% returns, ignoring that it only worked because of a specific market fluke in 2021."
+______________________________________________________________________________________________________________________________________________________________________
+Medicine         |  "Testing a drug for 10 different symptoms and only reporting the one it ""helped,"" even if that success was just statistical luck."
+______________________________________________________________________________________________________________________________________________________________________
+Machine Learning |  "Tweaking hyperparameters over and over on the test set until the accuracy looks great, essentially ""leaking"" information into the model."
+______________________________________________________________________________________________________________________________________________________________________
+
+   How to Prevent It :
+To keep your results honest, you need to create a "wall" between your exploration and your validation.
+ - Out-of-Sample Testing: Always keep a "vault" of data that your model never sees during training. If the model works on the training data but fails on the vault data, you’ve snooped.
+ - Pre-registration: Decide on your hypothesis and your testing methods before you look at the data.
+ - Bonferroni Correction: A statistical adjustment that makes the "bar" for success higher if you are running multiple tests at once.
+ - Common Sense Check: Ask, "Is there a logical reason for this pattern, or did I just find a coincidence?"
+
+=> The Golden Rule: If you search long enough for a pattern, you will find one. The question is whether that pattern has any predictive power for the future.
 
 
+	2. Stratified Sampling
+Imagine you are conducting a survey about a new video game. If your audience is 70% teenagers and 30% adults, a purely random split might accidentally pick only adults for your test set. Your model would then fail to understand teenagers!
+Stratified Sampling ensures that your train and test sets maintain the same proportions (ratios) of a specific important attribute as the original dataset.
+    How it Works :
+- Divide: You split the population into homogeneous subgroups called strata (e.g., income levels, age groups, or gender).
+- Sample: You pick the right number of instances from each stratum to ensure the test set is representative.
 
-
-
-
-
-
-
+Feature	   |	Random Sampling				      |	Stratified Sampling
+________________________________________________________________________________________________________________________
+Logic	   |	Every row has an equal chance.		      |	Groups are represented proportionally.
+________________________________________________________________________________________________________________________
+Bias Risk  |	High for small datasets (might miss a group). | Low (guarantees group representation).
+________________________________________________________________________________________________________________________
+Complexity |	Very simple.				      |	"Requires choosing the ""right"" category to split on."
+________________________________________________________________________________________________________________________
+Best For   |	"Large, balanced datasets."		      |	"Smaller datasets or datasets with ""rare"" important groups."
+________________________________________________________________________________________________________________________
 
 
 
