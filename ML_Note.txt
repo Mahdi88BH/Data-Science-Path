@@ -265,9 +265,31 @@ Best For   |	"Large, balanced datasets."		      |	"Smaller datasets or datasets 
 ________________________________________________________________________________________________________________________
 
 
+	3. Data quirks
+are the strange, unexpected, or messy anomalies that hide within datasets. While some are just "noise," others are significant signals—or, if handled poorly, the primary source of data snooping bias.
+Think of quirks as the "personality" of your data; sometimes it's insight, and sometimes it's just an eccentric habit that won't repeat itself in the real world.
 
+Common Types of Data Quirks : 
+- Outliers: Data points that sit far outside the norm.
+  - Example: A single billionaire in a survey of middle-class household incomes.
+- Survivor Bias: When your data only includes "winners," leading to skewed conclusions.
+ - Example: Studying successful startups to find the "secret to success" while ignoring the 90% that failed using the exact same methods.
+- Seasonality & Cyclicality: Patterns that repeat based on time but look like trends if the window is too short.
+ - Example: A spike in "gym membership" data in January that disappears by March.
+- Spurious Correlations: Two variables that move together perfectly but have zero causal link.
+ - Example: The famous correlation between ice cream sales and shark attacks (the hidden "quirk" here is simply summer).
 
+Why Quirks Lead to Bias ?
+- The human brain is a pattern-matching machine. When we see a quirk—like a specific stock performing well every Tuesday when it rains—we want to believe it's a "discovery."
+- If you build a model that treats these quirks as rules, your model will be "brittle." It looks genius on historical data but breaks the moment the "quirk" doesn't repeat. This is the essence of overfitting.
 
+How to Handle Them (The "Quirk" Workflow)
+
+Step,					 Action,															Why?
+1. Visualization		 "Plot the data (Scatter plots, Histograms)."					Humans spot anomalies visually much faster than by looking at spreadsheets.
+2. Sanity Check 	 	 "Ask: ""Is this a measurement error or a real phenomenon?  	A person listed as 200 years old is a data entry quirk; a person with $0 income is a real (if rare) data point.
+3. Winsorization		 Limit extreme values to a certain percentile.					"This keeps the data point but reduces its power to ""pull"" the average and distort results."
+4. Sensitivity Analysis	 Run your model with and without the quirk.						"If your conclusion changes completely because of one or two data points, your ""discovery"" isn't robust."
 
 
 
