@@ -1,0 +1,3 @@
+	- data scientist is someone who knows more statistics than a computer scientist and more computer science than a statistician.
+	- I believe that visualization is one of the most powerful means of achieving personal goals.
+		—Harvey Mackay
