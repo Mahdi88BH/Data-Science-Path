@@ -7,3 +7,5 @@
 		—Billy Connolly (linear algebra)
 	- Facts are stubborn, but statistics are more pliable.
 		—Mark Twain (Statistic)
+	- The laws of probability, so true in general, so fallacious in particular.
+		—Edward Gibbon
