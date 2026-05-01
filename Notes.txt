@@ -9,3 +9,5 @@
 		—Mark Twain (Statistic)
 	- The laws of probability, so true in general, so fallacious in particular.
 		—Edward Gibbon
+    - It is the mark of a truly intelligent person to be moved by statistics.
+        —George Bernard Shaw
