@@ -6,8 +6,31 @@
 - https://www.tylervigen.com/spurious-correlations
 - https://en.wikipedia.org/wiki/Anscombe%27s_quartet
 - https://www.autodeskresearch.com/publications/samestats
+- https://www.probabilisticworld.com/frequentist-bayesian-approaches-inferential-statistics/
+- https://en.wikipedia.org/wiki/Misuse_of_p-values
 
 
 - Qoute :
 "There are three kinds of lies: lies, damned lies, and statistics."
     — Benjamin Disraeli
+
+- Command Line :
+    - ipython kernel install --user --name=book_env
+
+
+- Further reading :
+    
+    - Jupyter Notebook Ressource :
+• Jupyter Notebook Basics: https://nbviewer.jupyter.org/github/jupyter/notebook/blob/master/docs/source/examples/Notebook/Notebook%20Basics.ipynb
+• JupyterLab introduction: https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906
+• Learning Markdown to make your Jupyter Notebooks presentation-ready: https://medium.com/ibm-data-science-experience/markdown-for-jupyter-notebooks-cheatsheet-386c05aeebed
+• 28 Jupyter Notebook Tips, Tricks, and Shortcuts: https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/
+
+    - Advanced Concepts Of Statistics :
+• A Gentle Introduction to Normality Tests in Python: https://machinelearningmastery.com/a-gentle-introduction-to-normality-tests-in-python/
+• How Hypothesis Tests Work: Confidence Intervals and Confidence Levels: https://statisticsbyjim.com/hypothesis-testing/hypothesis-tests-confidence-intervals-levels/
+• Intro to Inferential Statistics (Making Predictions with Data) on Udacity: https://www.udacity.com/course/intro-to-inferential-statistics--ud201
+• Lesson 4: Confidence Intervals (Penn State Elementary Statistics): https://online.stat.psu.edu/stat200/lesson/4
+• Seeing Theory: A visual introduction to probability and statistics: https://seeing-theory.brown.edu/index.html
+• Statistics Done Wrong: The Woefully Complete Guide by Alex Reinhart: https://www.statisticsdonewrong.com/
+• Survey Sampling Methods: https://stattrek.com/survey-research/sampling-methods.aspx
