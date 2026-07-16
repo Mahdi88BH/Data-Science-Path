@@ -1,0 +1,13 @@
+- https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/
+- https://venngage.com/blog/misleading-graphs/
+- https://www.youtube.com/watch?v=gcPIyeqymOU
+- https://www.khanacademy.org/math/statistics-probability/designing-studies/sampling-methods-stats/a/sampling-methods-review
+- https://en.wikipedia.org/wiki/Bessel%27s_correction
+- https://www.tylervigen.com/spurious-correlations
+- https://en.wikipedia.org/wiki/Anscombe%27s_quartet
+- https://www.autodeskresearch.com/publications/samestats
+
+
+- Qoute :
+"There are three kinds of lies: lies, damned lies, and statistics."
+    — Benjamin Disraeli
