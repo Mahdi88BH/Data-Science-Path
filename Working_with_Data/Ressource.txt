@@ -34,3 +34,8 @@
 • Seeing Theory: A visual introduction to probability and statistics: https://seeing-theory.brown.edu/index.html
 • Statistics Done Wrong: The Woefully Complete Guide by Alex Reinhart: https://www.statisticsdonewrong.com/
 • Survey Sampling Methods: https://stattrek.com/survey-research/sampling-methods.aspx
+
+
+
+Pandas buils top of Numpy
+Dataframes built top of Series each columns in DataFrame is a Series Object
