@@ -1,5 +1,7 @@
 .git
+.env
 .ipynb_checkpoints/
 ./Data_Science_Stack/.ipynb_checkpoints
+__pycache__/
 __pycache__/*
 /__pycache__

@@ -13,6 +13,8 @@
 - Qoute :
 "There are three kinds of lies: lies, damned lies, and statistics."
     — Benjamin Disraeli
+"If you torture the data long enough, it will confess to anything."
+    — Ronald Coase, winner of a Nobel Prize in Economics
 
 - Command Line :
     - ipython kernel install --user --name=book_env
